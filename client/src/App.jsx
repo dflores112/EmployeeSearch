@@ -1,21 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import axios from 'axios';
 
-class App extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {employees: []};
+import EmployeeList from './EmployeeList.jsx';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { employees: [] };
   }
 
-  render(){
-    return(
-      <div>Employee Data</div>
-    )
+  componentDidMount() {
+    this.getEmployeeData();
+  }
+
+  getEmployeeData() {
+    axios.get('/api/employees')
+      .then((res) => this.setState({ employees: res.data }))
+      .catch((err) => console.log(err));
+  }
+
+  render() {
+    const { employees } = this.state;
+    return (
+      <EmployeeList employees={employees} />
+    );
   }
 }
 
-
 ReactDOM.render(
-  <App></App>,
-  document.getElementById('app')
+  <App />,
+  document.getElementById('app'),
 );
