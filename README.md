@@ -1,6 +1,6 @@
 # Employee Search
 
-> React application build to allow users to: display employee data, allow users to search for employee by name, and filter employee by department and age.
+> React application built to allow users to: display employee data, allow users to search for employee by name, and filter employee by department and age.
 
 
 ### Installing Dependencies
@@ -20,7 +20,7 @@ npm run start
 
 ### Support
 
-> There are 8 Enzyme tests with the specs folder.
+> There are 8 Enzyme tests within the specs folder.
 
 ```sh
 npm run test
