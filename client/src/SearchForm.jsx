@@ -14,16 +14,19 @@ class SearchForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert(`A name was submitted: ${this.state.value}`);
+    const { searchEmployeeByName } = this.props;
+    const { value } = this.state;
+    searchEmployeeByName(value);
     event.preventDefault();
   }
 
   render() {
+    const {value} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Employee name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" value={value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>

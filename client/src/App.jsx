@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import EmployeeList from './EmployeeList.jsx';
 import SearchForm from './SearchForm.jsx';
-import FilterForm from './FilterForm.jsx'
+import FilterForm from './FilterForm.jsx';
 // .includes .lowercase
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +25,9 @@ class App extends React.Component {
   }
 
   searchEmployeeByName(name) {
-    axios.get('');
+    axios.get(`/api/employee/${name}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   filterEmployeeByDepartment(department) {
