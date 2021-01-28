@@ -28,7 +28,7 @@ npm run test
 
 ### Roadmap
 
-> Looking to add additional tests to the EmployeeList component along with styling.
+> Looking to add additional tests to the EmployeeList component along with styling using Styled-Components or Tailwind.
 
 
 ### Author
