@@ -16,7 +16,6 @@ class SearchForm extends React.Component {
   handleSubmit(event) {
     const { searchEmployeeByName } = this.props;
     const { value } = this.state;
-
     searchEmployeeByName(value);
     event.preventDefault();
   }

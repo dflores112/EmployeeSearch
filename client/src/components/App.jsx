@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import EmployeeList from './EmployeeList.jsx';
@@ -53,7 +52,7 @@ class App extends React.Component {
     const { employees } = this.state;
     return (
       <>
-        <SearchForm searchEmployeeByName={this.searchEmployeeByName} id="search" />
+        <SearchForm searchEmployeeByName={this.searchEmployeeByName} />
         <FilterForm filterEmployeeByDepartment={this.filterEmployeeByDepartment} getEmployeeData={this.getEmployeeData} filterEmployeeByAge={this.filterEmployeeByAge} />
         <EmployeeList employees={employees} />
       </>
@@ -61,7 +60,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('app'),
-);
+export default App;
