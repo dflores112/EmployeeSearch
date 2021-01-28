@@ -5,11 +5,12 @@ import axios from 'axios';
 import EmployeeList from './EmployeeList.jsx';
 import SearchForm from './SearchForm.jsx';
 import FilterForm from './FilterForm.jsx';
-// .includes .lowercase
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { employees: [] };
+    this.getEmployeeData = this.getEmployeeData.bind(this);
     this.searchEmployeeByName = this.searchEmployeeByName.bind(this);
     this.filterEmployeeByDepartment = this.filterEmployeeByDepartment.bind(this);
   }
@@ -26,13 +27,13 @@ class App extends React.Component {
 
   searchEmployeeByName(name) {
     axios.get(`/api/employee/${name}`)
-      .then((res) => console.log(res))
+      .then((res) => this.setState({ employees: res.data }))
       .catch((err) => console.log(err));
   }
 
   filterEmployeeByDepartment(department) {
-    axios.get(`api/${department}`)
-      .then((res) => console.log(res))
+    axios.get(`api/departments/${department}`)
+      .then((res) => this.setState({ employees: res.data }))
       .catch((err) => console.log(err));
   }
 
@@ -41,7 +42,7 @@ class App extends React.Component {
     return (
       <>
         <SearchForm searchEmployeeByName={this.searchEmployeeByName} />
-        <FilterForm filterEmployeeByDepartment={this.filterEmployeeByDepartment} />
+        <FilterForm filterEmployeeByDepartment={this.filterEmployeeByDepartment} getEmployeeData={this.getEmployeeData} />
         <EmployeeList employees={employees} />
       </>
     );

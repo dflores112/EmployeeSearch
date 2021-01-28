@@ -14,17 +14,24 @@ class FilterForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert(`Your favorite flavor is: ${this.state.value}`);
+    const { filterEmployeeByDepartment, getEmployeeData } = this.props;
+    const { value } = this.state;
+    if (value === 'All') {
+      getEmployeeData();
+    } else {
+      filterEmployeeByDepartment(value);
+    }
     event.preventDefault();
   }
 
   render() {
-    const {value} = this.state;
+    const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Filter employees by department:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select value={value} onChange={this.handleChange}>
+            <option value="All">All Employees</option>
             <option value="Film">Film</option>
             <option value="Sports">Sports</option>
             <option value="Music">Music</option>

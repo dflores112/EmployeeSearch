@@ -4,21 +4,25 @@ function EmployeeList(props) {
   const { employees } = props;
 
   const employeeList = employees.map((employee) => (
-    <div key={employee._id}>
-      {' '}
-      {employee.name}
-      ,
-      {' '}
-      {employee.department}
-      ,
-      {' '}
-      {employee.age}
-    </div>
+    <tr key={employee._id}>
+      <td>{employee.name}</td>
+      <td>{employee.department}</td>
+      <td>{employee.age}</td>
+    </tr>
   ));
+
+  const emptyList = <tr><td>No employees match your search</td></tr>;
   return (
-    <div>
-      {employeeList}
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Age</th>
+        </tr>
+        {employeeList.length !== 0 ? employeeList : emptyList}
+      </tbody>
+    </table>
   );
 }
 

@@ -41,20 +41,25 @@ function retrieveAllEmployees(callback) {
 }
 
 function retrieveEmployeeByName(name, callback) {
-  console.log(name)
   Employee.find({ name: new RegExp(name, 'i') }, (err, employee) => {
     if (err) {
       callback(err);
-    } else if (employee === '') {
-      console.log(employee)
-      callback(err);
     } else {
-      console.log(employee)
       callback(null, employee);
     }
-  }).stream();
+  });
+}
+
+function retrieveEmployeesByDepartment(department, callback) {
+  Employee.find({ department }, (err, employees) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, employees);
+    }
+  });
 }
 
 module.exports = {
-  addEmployee, drop, retrieveAllEmployees, retrieveEmployeeByName,
+  addEmployee, drop, retrieveAllEmployees, retrieveEmployeeByName, retrieveEmployeesByDepartment,
 };

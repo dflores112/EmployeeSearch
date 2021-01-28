@@ -28,6 +28,17 @@ app.get('/api/employee/:name', (req, res) => {
   });
 });
 
+app.get('/api/departments/:department', (req, res) => {
+  const { department } = req.params;
+  db.retrieveEmployeesByDepartment(department, (err, employees) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.send(employees);
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Employee app listening at http://localhost:${port}`);
 });
