@@ -41,7 +41,7 @@ class App extends React.Component {
     const { employees } = this.state;
     return (
       <>
-        <SearchForm searchEmployeeByName={this.searchEmployeeByName} />
+        <SearchForm searchEmployeeByName={this.searchEmployeeByName} id='search'/>
         <FilterForm filterEmployeeByDepartment={this.filterEmployeeByDepartment} getEmployeeData={this.getEmployeeData} />
         <EmployeeList employees={employees} />
       </>

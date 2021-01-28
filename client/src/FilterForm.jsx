@@ -28,15 +28,13 @@ class FilterForm extends React.Component {
     const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Filter employees by department:
-          <select value={value} onChange={this.handleChange}>
-            <option value="All">All Employees</option>
-            <option value="Film">Film</option>
-            <option value="Sports">Sports</option>
-            <option value="Music">Music</option>
-          </select>
-        </label>
+        Filter employees by department:
+        <select value={value} onChange={this.handleChange}>
+          <option value="All">All Employees</option>
+          <option value="Film">Film</option>
+          <option value="Sports">Sports</option>
+          <option value="Music">Music</option>
+        </select>
         <input type="submit" value="Submit" />
       </form>
     );
