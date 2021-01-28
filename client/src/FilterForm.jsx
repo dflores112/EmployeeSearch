@@ -14,10 +14,12 @@ class FilterForm extends React.Component {
   }
 
   handleSubmit(event) {
-    const { filterEmployeeByDepartment, getEmployeeData } = this.props;
+    const { filterEmployeeByDepartment, getEmployeeData, filterEmployeeByAge } = this.props;
     const { value } = this.state;
     if (value === 'All') {
       getEmployeeData();
+    } else if (value === 'ascending' || value === 'descending') {
+      filterEmployeeByAge(value);
     } else {
       filterEmployeeByDepartment(value);
     }
@@ -28,12 +30,14 @@ class FilterForm extends React.Component {
     const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        Filter employees by department:
+        Filter employees by:
         <select value={value} onChange={this.handleChange}>
           <option value="All">All Employees</option>
-          <option value="Film">Film</option>
-          <option value="Sports">Sports</option>
-          <option value="Music">Music</option>
+          <option value="Film">Film (Department)</option>
+          <option value="Sports">Sports (Department)</option>
+          <option value="Music">Music (Department)</option>
+          <option value="descending"> Age (Descending)</option>
+          <option value="ascending"> Age (Ascending)</option>
         </select>
         <input type="submit" value="Submit" />
       </form>
