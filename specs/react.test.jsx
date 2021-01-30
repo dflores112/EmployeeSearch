@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 
 import App from '../client/src/components/App.jsx';
 import FilterForm from '../client/src/components/FilterForm.jsx';
+import EmployeeList from '../client/src/components/EmployeeList.jsx';
 import SearchForm from '../client/src/components/SearchForm.jsx';
 
 describe('App', () => {
@@ -47,5 +48,25 @@ describe('SearchForm', () => {
   it('renders correct tags', () => {
     expect(wrapper.find('form')).toExist();
     expect(wrapper.find('input')).toExist();
+  });
+});
+
+describe('EmployeeList', () => {
+  const temp = {
+    employees: [{
+      age: 39, name: 'Beyonce Knowles', _id: '60125ef63bf83861e012ebf2', department: 'Music',
+    }, {
+      age: 38, department: 'Film', name: 'Anne Hathaway', _id: '60125ef63bf83861e012ebf4',
+    }],
+  };
+
+  const wrapper = shallow(<EmployeeList {...temp} />);
+
+  it('renders correct tags', () => {
+    expect(wrapper.find('table')).toExist();
+    expect(wrapper.find('tr')).toExist();
+    expect(wrapper.find('tbody')).toExist();
+    expect(wrapper.find('th')).toExist();
+    expect(wrapper.find('td')).toExist();
   });
 });
