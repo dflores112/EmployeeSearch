@@ -20,7 +20,7 @@ npm run start
 
 ### Support
 
-> There are 8 Enzyme tests within the specs folder.
+> There are 9 Enzyme tests within the specs folder.
 
 ```sh
 npm run test
@@ -28,7 +28,7 @@ npm run test
 
 ### Roadmap
 
-> Looking to add additional tests to the EmployeeList component along with styling using Styled-Components or Tailwind.
+> Looking to add styling using Styled-Components or Tailwind.
 
 
 ### Author
