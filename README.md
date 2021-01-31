@@ -28,11 +28,6 @@ npm run start
 npm run test
 ```
 
-### Roadmap
-
-> Looking to add styling using Styled-Components or Tailwind.
-
-
 ### Author
 
 > Daniel Flores
