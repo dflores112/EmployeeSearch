@@ -3,6 +3,8 @@
 > React application built to allow users to: display employee data, allow users to search for employee by name, and filter employee by department and age.
 
 
+<img src="EmployeeDatabase.png" alt="EmployeeDatabase"/>
+
 ### Installing Dependencies
 
 From within the root directory:

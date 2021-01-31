@@ -63,10 +63,10 @@ describe('EmployeeList', () => {
   const wrapper = shallow(<EmployeeList {...temp} />);
 
   it('renders correct tags', () => {
-    expect(wrapper.find('table')).toExist();
-    expect(wrapper.find('tr')).toExist();
     expect(wrapper.find('tbody')).toExist();
-    expect(wrapper.find('th')).toExist();
-    expect(wrapper.find('td')).toExist();
+  });
+
+  it('Component availability', () => {
+    expect(wrapper.exists()).toBe(true);
   });
 });

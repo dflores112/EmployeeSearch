@@ -1,28 +1,55 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+const Table = styled.table`
+border-radius: 15px;
+`;
+
+const TableHeader = styled.th`
+width: 30%;
+border: 1px solid #d9dadb;
+padding:10px;
+text-align: center;
+background-color: #f2f3f4;
+`;
+
+const TableData = styled.td`
+width: 30%;
+border: 1px solid #d9dadb;
+padding:5px;
+text-align: center;
+`;
+
+const TableRow = styled.tr`
+&:hover {
+  background-color: #d9dadb;
+}
+`;
+
 function EmployeeList(props) {
   const { employees } = props;
 
   const employeeList = employees.map((employee) => (
-    <tr key={employee._id}>
-      <td>{employee.name}</td>
-      <td>{employee.department}</td>
-      <td>{employee.age}</td>
-    </tr>
+    <TableRow key={employee._id}>
+      <TableData>{employee.name}</TableData>
+      <TableData>{employee.department}</TableData>
+      <TableData>{employee.age}</TableData>
+    </TableRow>
   ));
 
-  const emptyList = <tr><td>No employees match your search</td></tr>;
+  const emptyList = <TableRow><TableData>No employees match your search</TableData></TableRow>;
   return (
-    <table>
+    <Table>
       <tbody>
-        <tr>
-          <th>Name</th>
-          <th>Department</th>
-          <th>Age</th>
-        </tr>
+        <TableRow>
+          <TableHeader>Name</TableHeader>
+          <TableHeader>Department</TableHeader>
+          <TableHeader>Age</TableHeader>
+        </TableRow>
         {employeeList.length !== 0 ? employeeList : emptyList}
       </tbody>
-    </table>
+    </Table>
   );
 }
 
