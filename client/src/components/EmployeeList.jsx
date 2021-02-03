@@ -11,7 +11,7 @@ width: 30%;
 border: 1px solid #d9dadb;
 padding:10px;
 text-align: center;
-background-color: #f2f3f4;
+background-color: #dbe9f4;
 `;
 
 const TableData = styled.td`

@@ -28,6 +28,10 @@ npm run start
 npm run test
 ```
 
+### Technologies
+
+> React, Node, Express, MongoDB, Styled-Components, Webpack, Enzyme-Jest
+
 ### Author
 
 > Daniel Flores

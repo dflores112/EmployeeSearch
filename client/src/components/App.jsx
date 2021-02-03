@@ -9,15 +9,15 @@ import FilterForm from './FilterForm.jsx';
 const AppWrap = styled.div`
   height: 100%;
   width:100%;
-  background-color: #f2f3f4;
+  background-color: #dbe9f4;
   display: flex;
   justify-content: center;
   align-items:center;
 `;
 
 const EmployeeListWrap = styled.div`
-  height: 75%;
-  width:50%;
+  height: 45%;
+  width:42%;
   padding: 10px;
   background-color: #fffafa;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  margin: auto;

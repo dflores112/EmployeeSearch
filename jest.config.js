@@ -4,9 +4,7 @@
  */
 
 module.exports = {
-
   clearMocks: true,
-
   coverageDirectory: 'coverage',
   moduleFileExtensions: [
     'js',
