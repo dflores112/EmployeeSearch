@@ -22,7 +22,7 @@ npm run start
 
 ### Support
 
-> There are 9 Enzyme tests within the specs folder.
+> There are 10 Enzyme tests within the specs folder.
 
 ```sh
 npm run test
