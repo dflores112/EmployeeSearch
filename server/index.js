@@ -12,7 +12,7 @@ app.get('/api/employees', (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
-      res.send(employees);
+      res.status(200).send(employees);
     }
   });
 });
@@ -23,7 +23,7 @@ app.get('/api/employee/:name', (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
-      res.send(employee);
+      res.status(200).send(employee);
     }
   });
 });
@@ -34,7 +34,7 @@ app.get('/api/departments/:department', (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
-      res.send(employees);
+      res.status(200).send(employees);
     }
   });
 });
