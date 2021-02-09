@@ -30,14 +30,12 @@ class FilterForm extends React.Component {
     const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        Filter employees by:
+        Filter Employees By:
         <select value={value} onChange={this.handleChange}>
           <option value="All">All Employees</option>
           <option value="Film">Film (Department)</option>
           <option value="Sports">Sports (Department)</option>
           <option value="Music">Music (Department)</option>
-          <option value="descending"> Age (Descending)</option>
-          <option value="ascending"> Age (Ascending)</option>
         </select>
         <input type="submit" value="Submit" />
       </form>

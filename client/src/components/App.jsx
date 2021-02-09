@@ -47,7 +47,6 @@ class App extends React.Component {
     this.getEmployeeData = this.getEmployeeData.bind(this);
     this.searchEmployeeByName = this.searchEmployeeByName.bind(this);
     this.filterEmployeeByDepartment = this.filterEmployeeByDepartment.bind(this);
-    this.filterEmployeeByAge = this.filterEmployeeByAge.bind(this);
   }
 
   componentDidMount() {
@@ -72,17 +71,6 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  filterEmployeeByAge(preference) {
-    const { employees } = this.state;
-    if (preference === 'ascending') {
-      const newState = employees.sort((a, b) => a.age - b.age);
-      this.setState({ employees: newState });
-    } else {
-      const newState = employees.sort((a, b) => b.age - a.age);
-      this.setState({ employees: newState });
-    }
-  }
-
   render() {
     const { employees } = this.state;
     return (
@@ -93,7 +81,7 @@ class App extends React.Component {
           </HeaderWrap>
           <HorizontalWrap>
             <SearchForm searchEmployeeByName={this.searchEmployeeByName} />
-            <FilterForm filterEmployeeByDepartment={this.filterEmployeeByDepartment} getEmployeeData={this.getEmployeeData} filterEmployeeByAge={this.filterEmployeeByAge} />
+            <FilterForm filterEmployeeByDepartment={this.filterEmployeeByDepartment} getEmployeeData={this.getEmployeeData} />
             <EmployeeList employees={employees} />
           </HorizontalWrap>
         </EmployeeListWrap>
